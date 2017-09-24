@@ -8,6 +8,7 @@ import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
 
 import entities.SnakeHead;
+import entities.SimulatedSnake;
 
 public class Running extends BasicGameState{
 
@@ -28,6 +29,13 @@ public class Running extends BasicGameState{
 	@Override
 	public void update(GameContainer gc, StateBasedGame sbg, int delta) throws SlickException {
 		sh.update(input, delta);	
+	}
+	
+	public SimulatedSnake getSnakeByID(int ID) {
+		return null;
+	}
+	public void addSnake(SimulatedSnake s) {
+		
 	}
 
 	@Override
