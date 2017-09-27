@@ -1,7 +1,8 @@
 package entities;
 
 import org.newdawn.slick.Graphics;
-import org.newdawn.slick.geom.Vector2f;
+
+import tools.Vector2f;
 
 public class SnakeSegment 
 {
@@ -21,7 +22,7 @@ public class SnakeSegment
 	
 	public void draw(Graphics g)
 	{
-		g.drawOval(position.x, position.y + 720, size, size);
+		g.fillOval(position.x, position.y + 720, size, size);
 	}
 	
 	public void update(int deltaTime)

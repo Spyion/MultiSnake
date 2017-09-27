@@ -5,7 +5,8 @@ import java.util.List;
 
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Input;
-import org.newdawn.slick.geom.Vector2f;
+
+import tools.Vector2f;
 
 public class SnakeHead 
 {
@@ -36,7 +37,7 @@ public class SnakeHead
 	
 	public void draw(Graphics g)
 	{
-		g.drawOval(position.x, position.y + 720, size, size);
+		g.fillOval(position.x, position.y + 720, size, size);
 		
 		for (int i = 0; i < mySegments.size(); i++) 
 		{

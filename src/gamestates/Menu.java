@@ -6,44 +6,48 @@ import org.newdawn.slick.Font;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.SlickException;
-import org.newdawn.slick.UnicodeFont;
-import org.newdawn.slick.gui.TextField;
 import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
 
+import gui.InputField;
 import gui.Panel;
 
 public class Menu extends BasicGameState{
-
+	
 	Font font;
 	Panel main;
 	
-	TextField Ipcreate, Ipjoin;
+	InputField Ipcreate, Ipjoin;
 	
 	@Override
 	public void init(GameContainer gc, StateBasedGame sbg) throws SlickException {
 		States.stateMenu = this;
 		
-		font = new UnicodeFont(new java.awt.Font("Arial", java.awt.Font.ITALIC, 26));
+//		font = new UnicodeFont(new java.awt.Font("Arial", java.awt.Font.ITALIC, 26));
+		font = gc.getDefaultFont();
 		
-		Ipcreate = new TextField(gc, font, 100, 500, 100, 100);
-		Ipjoin = new TextField(gc, font, 600, 500, 100, 100);
-		Ipcreate.setBackgroundColor(Color.blue);
-		Ipjoin.setBackgroundColor(Color.blue);
-		Ipcreate.setText("Create Server");
-		Ipjoin.setText("join Server");
+		
+		
+		Ipcreate = 	new InputField("CREATE  IP:PORT", 100, 500, 250, 20, font, gc);
+		Ipjoin = 	new InputField("JOIN  IP:PORT", 600, 500, 250, 20, font, gc);
+		Ipcreate.setBackgroundColor(Color.black);
+		Ipjoin.setBackgroundColor(Color.black);
+		
+		main = new Panel(0, 0, Ipcreate, Ipjoin);
 
 		
 	}
 
 	@Override
-	public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {
-		Ipcreate.render(gc, g);
-		Ipjoin.render(gc, g);
+	public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {		
+		main.render(g);
+		g.setBackground(Color.white);
 	}
 
+	float count = 0;
 	@Override
 	public void update(GameContainer gc, StateBasedGame sbg, int delta) throws SlickException {
+		main.update(delta);
 	}
 
 	

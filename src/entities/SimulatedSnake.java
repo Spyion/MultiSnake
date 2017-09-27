@@ -2,9 +2,8 @@ package entities;
 
 import java.util.ArrayList;
 
-import org.newdawn.slick.geom.Vector2f;
-
 import tools.Toolbox;
+import tools.Vector2f;
 
 public class SimulatedSnake {
 	ArrayList<Vector2f> positions = new ArrayList<Vector2f>();
